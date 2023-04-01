@@ -225,7 +225,7 @@ nav {
 
 .links {
   height: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
   transition: var(--transition);
 }
 
