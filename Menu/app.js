@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function () {
   const cotigoryBtns = cotigories.map(function (category) { return `<button type="button" class="filter-btn" data-id=${category}>${category}</button>` }).join('')
   container.innerHTML = cotigoryBtns
   const filterBtns = document.querySelectorAll('.filter-btn')
-  // Filter items
+  // Filter items!
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       const category = e.currentTarget.dataset.id
