@@ -1,1 +1,1 @@
-# 15-js-projects (not large)
+# 15-js-projects (simple ones)
