@@ -79,30 +79,32 @@ const menu = [{
   desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
 },
 ];
-
+// SELECTORS
+const container = document.querySelector('.btn-container')
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn')
 // Load items
 window.addEventListener('DOMContentLoaded', function () {
   displayMenuItems(menu);
   const cotigories = menu.reduce(function (values, item) { if (!values.includes(item.category)) { values.push(item.category) } return values }, ['all'])
-  console.log(cotigories)
-})
-
-// Filter items
-filterBtns.forEach(function (btn) {
-  btn.addEventListener('click', function (e) {
-    const category = e.currentTarget.dataset.id
-    const menuCategory = menu.filter(function (menuItem) {
-      // console.log(menuItem.category)
-      if (menuItem.category === category) {
-        return menuItem
-      }
+  const cotigoryBtns = cotigories.map(function (category) { return `<button type="button" class="filter-btn" data-id=${category}>${category}</button>` }).join('')
+  container.innerHTML = cotigoryBtns
+  const filterBtns = document.querySelectorAll('.filter-btn')
+  // Filter items
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      const category = e.currentTarget.dataset.id
+      const menuCategory = menu.filter(function (menuItem) {
+        // console.log(menuItem.category)
+        if (menuItem.category === category) {
+          return menuItem
+        }
+      })
+      if (category === 'all') { displayMenuItems(menu) } else { displayMenuItems(menuCategory) }
+      // console.log(displayMenuItems(menuCategory))
     })
-    if (category === 'all') { displayMenuItems(menu) } else { displayMenuItems(menuCategory) }
-    // console.log(displayMenuItems(menuCategory))
   })
 })
+
 
 
 //Main function
