@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* FOR MIN 1000PX */
+        
+        @media only screen and (min-width: 1000px) {
+            main {
+                height: 100vh;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                /* background-color: gray; */
+            }
+            section {
+                width: 30%;
+                height: 50vh;
+                /* background-color: gray; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                margin: 0px 10px;
+                border: solid 2px red;
+                border-radius: 15px;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 200px;
+            }
+        }
+        /* for max 1000px */
+        
+        @media only screen and (max-width: 1000px) {
+            main {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                /* background-color: gray; */
+            }
+            section {
+                width: 30%;
+                height: 50vh;
+                /* background-color: gray; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                margin: 15px 0px;
+                border: solid 2px red;
+                border-radius: 15px;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_FWF2judaujT30K9sMf-tZFhMWpgP6xCemw&s" alt="" />
+            <h1>Modern Photo</h1>
+            <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut, quisquam excepturi voluptates nihil eaque quo ipsam laborum voluptate soluta.</aside>
+        </section>
+        <section>
+            <img src="https://images.squarespace-cdn.com/content/v1/61c4da8eb1b30a201b9669f2/e2e0e62f-0064-4f86-b9d8-5a55cb7110ca/Korembi-January-2024.jpg" alt="" />
+            <h1>Nature Photo</h1>
+            <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut, quisquam excepturi voluptates nihil eaque quo ipsam laborum voluptate soluta.</aside>
+        </section>
+        <section>
+            <img src="https://images.contentstack.io/v3/assets/blt0a0cb058815d4d96/blta962aadca1267515/6310fa17eb56af5839111e2e/Wind_and_Hurricane_Damage_to_Home.jpg?width=1440" alt="" />
+            <h1>Hurricane Photo</h1>
+            <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ut, quisquam excepturi voluptates nihil eaque quo ipsam laborum voluptate soluta.</aside>
+        </section>
+    </main>
+</body>
+
+</html>
