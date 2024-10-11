@@ -1,25 +1,25 @@
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
 ];
 const weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
 ];
 
 const giveaway = document.querySelector(".giveaway");
@@ -48,37 +48,38 @@ giveaway.textContent = `giveaway ends on ${weekday}, ${month} ${year} ${hours}:$
 const futureTime = futureDate.getTime(); // 1680715351070
 
 function getRemainingTime() {
-  const today = new Date().getTime();
-  const msTime = futureTime - today;
-  // Values in ms
-  const oneDay = 24 * 60 * 60 * 1000;
-  const oneHour = 60 * 60 * 1000;
-  const oneMinute = 60 * 1000;
-  // Calculating all values
-  const days = Math.floor(msTime / oneDay);
-  const hours = Math.floor((msTime % oneDay) / oneHour);
-  const minutes = Math.floor((msTime % oneHour) / oneMinute);
-  const seconds = Math.floor((msTime % oneMinute) / 1000);
+    const today = new Date().getTime();
+    const msTime = futureTime - today;
+    // Values in ms
+    const oneDay = 24 * 60 * 60 * 1000;
+    const oneHour = 60 * 60 * 1000;
+    const oneMinute = 60 * 1000;
+    // Calculating all values
+    const days = Math.floor(msTime / oneDay);
+    const hours = Math.floor((msTime % oneDay) / oneHour);
+    const minutes = Math.floor((msTime % oneHour) / oneMinute);
+    const seconds = Math.floor((msTime % oneMinute) / 1000);
 
-  // set values array:
-  const values = [days, hours, minutes, seconds];
+    // set values array:
+    const values = [days, hours, minutes, seconds];
 
-  function format(item) {
-    if (item < 10) {
-      return (item = `0${item}`);
+    function format(item) {
+        if (item < 10) {
+            return (item = `0${item}`);
+        }
+        return item;
     }
-    return item;
-  }
 
-  items.forEach(function (item, index) {
-    item.innerHTML = format(values[index]);
-  });
+    items.forEach(function(item, index) {
+        item.innerHTML = format(values[index]);
+    });
 
-  if (msTime < 0) {
-    clearInterval(countdown);
-    deadline.innerHTML = `<h4 class='expired'>sorry, this giveaway has expired!</h4>`
-  }
-}
+    if (msTime < 0) {
+        clearInterval(countdown);
+        deadline.innerHTML = `<h4 class='expired'>sorry, this giveaway has expired!</h4>`
+    }
+};
+
 // Countdown
 let countdown = setInterval(getRemainingTime, 1000)
 getRemainingTime();
