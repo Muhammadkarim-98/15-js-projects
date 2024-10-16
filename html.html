@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <style>
+        input:invalid:required {
+            background-image: linear-gradient(to right, green, pink)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BLOCK-LEVEL ELEMENTS -->
+    <h1>hello world,
+        <p>i am so
+            <div class="lol">happy</div>
+        </p>
+    </h1>
+    <h2> i am also</h2>
+    <!-- SEMENTIC HTML -->
+    <header id="header">
+        <h1>My site!</h1>
+        <nav id="navigatiob">
+            <ul>
+                <li>
+                    <a href="google.com">link</a>
+                </li>
+                <li>
+                    <a href="google.com">link</a>
+                </li>
+                <li>
+                    <a href="google.com">link</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MARK -->
+    <p>this text is <mark>highlited</mark></p>
+    <!-- TIME -->
+    <p>Shop opens at <time datetime="2024-11-11">1st, January</time></p>
+    <!-- PROGRESS -->
+    <progress value="80" max="200"></progress>
+    <p></p>
+    <!-- FORM -->
+    <form action="">
+        <label for="choose">Choose one of the fruit</label>
+        <!-- PATTERN -->
+        <input id="choose" name="I like" type="text" pattern="[Bb]ananas|[Aa]pple" required>
+        <button>Submit</button>
+    </form>
+
+</body>
+
+</html>
